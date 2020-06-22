@@ -26,8 +26,8 @@ type SimpleImageType struct {
 // SimpleImage : SimpleImage SkillResponse
 func SimpleImage(imageURL string, altText string) SimpleImageType {
 	response := SimpleImageType{}
-	response.simpleImage.ImageURL = imageURL
-	response.simpleImage.AltText = altText
+	response.SimpleImage.ImageURL = imageURL
+	response.SimpleImage.AltText = altText
 
 	return response
 }
