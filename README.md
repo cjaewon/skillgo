@@ -4,6 +4,11 @@
 📦 Go 을 위한 kakao i open builder skill 응답 포맷 생성 모듈  
 [🟡 JavaScript Version](https://github.com/cjaewon/kakaoEmbed)
 
+## 설치
+```sh
+go get github.com/cjaewon/skillgo
+```
+
 ## 지원하는 SkillResponse
 
 ### 기본
@@ -27,11 +32,6 @@
 | **Button** | `ButtonType` | Button |
 | **Profile** | `ProfileType` | Profile |
 | **CarouselHeader** | `CarouselHeaderType` | CarouselHeader |
-
-## 설치
-```sh
-go get github.com/cjaewon/skillgo
-```
 
 ## 예제
 
