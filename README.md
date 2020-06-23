@@ -4,7 +4,11 @@
 
 ## 지원하는 SkillResponse:
 
-| SkillResponse | 함수 이름 |
-| - | - |
-| **SimpleText** | SimpleText |
-| **SimpleImage** | SimpleImage |
+| SkillResponse | 타입 (struct) | 함수 이름 |
+| - | - | - |
+| **SimpleText** | `SimpleTextType` | SimpleText |
+| **SimpleImage** | `SimpleImageType` | SimpleImage |
+| **BasicCard** | `BasicCardType` | BasicCard |
+| **Thumbnail** | `ThumbnailType` | Thumbnail |
+| **Link** | `LinkType` | Link |
+| **Button** | `ButtonType` | Button |
