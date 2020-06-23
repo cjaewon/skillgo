@@ -1,5 +1,7 @@
 package skillgo
 
+import "reflect"
+
 // BasicCardType : BasicCard Struct Type
 type BasicCardType struct {
 	BasicCard struct {
@@ -84,6 +86,55 @@ func CommerceCard(
 	}
 
 	response.CommerceCard.Buttons = buttons
+
+	return response
+}
+
+// ListCardType : ListCard Struct Type
+type ListCardType struct {
+	ListCard struct {
+		Header  ListItemType   `json:"header"`
+		Items   []ListItemType `json:"items"`
+		Buttons []ButtonType   `json:"buttons,omitempty"`
+	} `json:"listCard"`
+}
+
+// ListItemType : ListItem Struct Type
+type ListItemType struct {
+	Title       string   `json:"title"`
+	Description string   `json:"description,omitempty"`
+	ImageURL    string   `json:"imageUrl,omitempty"`
+	Link        LinkType `json:"link,omitempty"`
+}
+
+// ListCard : ListCard SkillResponse
+func ListCard(header ListItemType, items []ListItemType, buttons []ButtonType) ListCardType {
+	response := ListCardType{}
+
+	response.ListCard.Header = header
+	response.ListCard.Items = items
+
+	if len(buttons) != 0 {
+		response.ListCard.Buttons = buttons
+	}
+
+	return response
+}
+
+// ListItem : ListItem for ListCard
+func ListItem(title string, description string, imageURL string, link LinkType) ListItemType {
+	response := ListItemType{}
+
+	response.Title = title
+	if description != "" {
+		response.Description = description
+	}
+	if imageURL != "" {
+		response.ImageURL = imageURL
+	}
+	if !reflect.DeepEqual(link, LinkType{}) {
+		response.Link = link
+	}
 
 	return response
 }
