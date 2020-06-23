@@ -109,3 +109,14 @@ type CarouselHeaderType struct {
 	Description string        `json:"description"`
 	Thumbnail   ThumbnailType `json:"thumbnail"`
 }
+
+// CarouselHeader : CarouselHeader SkillResponse
+func CarouselHeader(title string, description string, thumbnail ThumbnailType) CarouselHeaderType {
+	response := CarouselHeaderType{}
+
+	response.Title = title
+	response.Description = description
+	response.Thumbnail = thumbnail
+
+	return response
+}
