@@ -27,3 +27,11 @@
 | **Button** | `ButtonType` | Button |
 | **Profile** | `ProfileType` | Profile |
 | **CarouselHeader** | `CarouselHeaderType` | CarouselHeader |
+
+## 설치
+```sh
+go get github.com/cjaewon/skillgo
+```
+
+## 예제
+
