@@ -3,11 +3,9 @@ package skillgo
 // BasicCardType : BasicCard Struct Type
 type BasicCardType struct {
 	BasicCard struct {
-		Title       string `json:"title,omitempty"`
-		Description string `json:"description,omitempty"`
-		Thumbnail   struct {
-			ImageURL string `json:"imageUrl"`
-		} `json:"thumbnail"`
+		Title       string        `json:"title,omitempty"`
+		Description string        `json:"description,omitempty"`
+		Thumbnail   ThumbnailType `json:"thumbnail"`
 		// Profile 미지원
 		Profile struct {
 			ImageURL string `json:"imageUrl"`
@@ -19,18 +17,25 @@ type BasicCardType struct {
 			Comment int `json:"comment"`
 			Share   int `json:"share"`
 		} `json:"social,omitempty"`
-		Buttons []struct {
-			Action      string `json:"action"`
-			Label       string `json:"label"`
-			MessageText string `json:"messageText,omitempty"`
-			WebLinkURL  string `json:"webLinkUrl,omitempty"`
-		} `json:"buttons"`
+		Buttons []ButtonType `json:"buttons,omitempty"`
 	} `json:"basicCard"`
 }
 
 // BasicCard : BasicCard SkillResponse
-func BasicCard() BasicCardType {
+func BasicCard(title string, description string, thumbnail ThumbnailType, buttons []ButtonType) BasicCardType {
 	resposne := BasicCardType{}
+	resposne.BasicCard.Thumbnail = thumbnail
+
+	if title != "" {
+		resposne.BasicCard.Title = title
+	}
+	if description != "" {
+		resposne.BasicCard.Description = description
+	}
+
+	if len(buttons) != 0 {
+		resposne.BasicCard.Buttons = buttons
+	}
 
 	return resposne
 }
