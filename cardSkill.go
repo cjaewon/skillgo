@@ -39,3 +39,51 @@ func BasicCard(title string, description string, thumbnail ThumbnailType, button
 
 	return resposne
 }
+
+// CommerceCardType : CommerceCard Struct Type
+type CommerceCardType struct {
+	CommerceCard struct {
+		Description     string          `json:"description"`
+		Price           int             `json:"price"`
+		Currency        string          `json:"currency"`
+		Discount        int             `json:"discount,omitempty"`
+		DiscountRate    int             `json:"discountRate,omitempty"`
+		DiscountedPrice int             `json:"dicountedPrice,omitempty"`
+		Thumbnails      []ThumbnailType `json:"thumbnails"`
+		Profile         ProfileType     `json:"profile,omitempty"`
+		Buttons         []ButtonType    `json:"buttons"`
+	} `json:"commerceCard"`
+}
+
+// CommerceCard : CommerceCard SkillResponse
+func CommerceCard(
+	description string,
+	price int,
+	currency string,
+	discount int,
+	discountRate int,
+	discountedPrice int,
+	thumbnails []ThumbnailType,
+	profile ProfileType,
+	buttons []ButtonType,
+) CommerceCardType {
+	response := CommerceCardType{}
+
+	response.CommerceCard.Description = description
+	response.CommerceCard.Price = price
+	response.CommerceCard.Currency = currency
+
+	if discount != 0 {
+		response.CommerceCard.Discount = discount
+	}
+	if discountRate != 0 {
+		response.CommerceCard.DiscountRate = discountRate
+	}
+	if discountedPrice != 0 {
+		response.CommerceCard.DiscountedPrice = discountedPrice
+	}
+
+	response.CommerceCard.Buttons = buttons
+
+	return response
+}
