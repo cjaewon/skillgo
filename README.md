@@ -14,7 +14,8 @@
 | **SimpleImage** | `SimpleImageType` | SimpleImage |
 | **BasicCard** | `BasicCardType` | BasicCard |
 | **CommerceCard** | `CommerceCardType` | CommerceCard |
-| **ListCard** | `ListCard` | ListCard
+| **ListCard** | `ListCard` | ListCard |
+| **Carousel** | `CarouselType` | Carousel |
 
 ### 공통
 [kakao i 오픈빌더 공통](https://i.kakao.com/docs/skill-response-format#%EA%B3%B5%ED%86%B5)
@@ -25,3 +26,4 @@
 | **Link** | `LinkType` | Link |
 | **Button** | `ButtonType` | Button |
 | **Profile** | `ProfileType` | Profile |
+| **CarouselHeader** | `CarouselHeaderType` | CarouselHeader |
