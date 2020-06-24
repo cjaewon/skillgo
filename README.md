@@ -9,29 +9,38 @@
 go get github.com/cjaewon/skillgo
 ```
 
+## 주요 타입
+| 이름 | 타입 |
+| - | - |
+| [**SkillPayload**](https://i.kakao.com/docs/skill-response-format#skillpayload) | `SkillPayload` |
+| [**SkillResponse**](https://i.kakao.com/docs/skill-response-format#skillresponse) | `SkillResponse` |
+| [**SkillTemplate**](https://i.kakao.com/docs/skill-response-format#skilltemplate) | `SkillTemplate` |
+| [**ContextControl**](https://i.kakao.com/docs/skill-response-format#contextcontrol) | `ContextControl` |
+| [**QuickReplies**](https://i.kakao.com/docs/skill-response-format#quickreplies) | `QuickReplies` |
+
 ## 지원하는 SkillResponse
 
 ### 기본
 
 | SkillResponse | 타입 (struct) | 함수 이름 |
 | - | - | - |
-| **SimpleText** | `SimpleTextType` | SimpleText |
-| **SimpleImage** | `SimpleImageType` | SimpleImage |
-| **BasicCard** | `BasicCardType` | BasicCard |
-| **CommerceCard** | `CommerceCardType` | CommerceCard |
-| **ListCard** | `ListCard` | ListCard |
-| **Carousel** | `CarouselType` | Carousel |
+| [**SimpleText**](https://i.kakao.com/docs/skill-response-format#simpletext) | `SimpleTextType` | SimpleText |
+| [**SimpleImage**](https://i.kakao.com/docs/skill-response-format#simpleimage) | `SimpleImageType` | SimpleImage |
+| [**BasicCard**](https://i.kakao.com/docs/skill-response-format#basiccard) | `BasicCardType` | BasicCard |
+| [**CommerceCard**](https://i.kakao.com/docs/skill-response-format#commercecard) | `CommerceCardType` | CommerceCard |
+| [**ListCard**](https://i.kakao.com/docs/skill-response-format#listcard) | `ListCard` | ListCard |
+| [**Carousel**](https://i.kakao.com/docs/skill-response-format#carousel) | `CarouselType` | Carousel |
 
 ### 공통
 [kakao i 오픈빌더 공통](https://i.kakao.com/docs/skill-response-format#%EA%B3%B5%ED%86%B5)
 
 | SkillResponse | 타입 (struct) | 함수 이름 |
 | - | - | - |
-| **Thumbnail** | `ThumbnailType` | Thumbnail |
-| **Link** | `LinkType` | Link |
-| **Button** | `ButtonType` | Button |
-| **Profile** | `ProfileType` | Profile |
-| **CarouselHeader** | `CarouselHeaderType` | CarouselHeader |
+| [**Thumbnail**](https://i.kakao.com/docs/skill-response-format#thumbnail) | `ThumbnailType` | Thumbnail |
+| [**Link**](https://i.kakao.com/docs/skill-response-format#link) | `LinkType` | Link |
+| [**Button**](https://i.kakao.com/docs/skill-response-format#button) | `ButtonType` | Button |
+| [**Profile**](https://i.kakao.com/docs/skill-response-format#profile) | `ProfileType` | Profile |
+| [**CarouselHeader**](https://i.kakao.com/docs/skill-response-format#carouselheader) | `CarouselHeaderType` | CarouselHeader |
 
 ## 예제
 
