@@ -37,12 +37,24 @@ type SkillPayload struct {
 
 // SkillResponse : SkillResponse
 type SkillResponse struct {
-	Version  string `json:"version"`
-	Template struct {
-		Outputs      []interface{} `json:"outputs"`
-		QuickReplies []interface{} `json:"quickReplies"`
-	} `json:"template"`
+	Version  string        `json:"version"`
+	Template SkillTemplate `json:"template,omitempty"`
 
-	Context interface{} `json:"context"`
-	Data    interface{} `json:"data"`
+	Context interface{} `json:"context,omitempty"`
+	Data    interface{} `json:"data,omitempty"`
+}
+
+// SkillTemplate : SkillTemplate
+type SkillTemplate struct {
+	Outputs      []interface{} `json:"outputs,omitempty"`
+	QuickReplies []interface{} `json:"quickReplies,omitempty"`
+}
+
+// ContextControl : ContextControl
+type ContextControl struct {
+	Values []struct {
+		Name     string            `json:"name"`
+		LifeSpan int               `json:"lifeSpan"`
+		Params   map[string]string `json:"params,omitempty"`
+	}
 }
