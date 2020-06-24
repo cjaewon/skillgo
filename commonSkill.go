@@ -120,3 +120,19 @@ func CarouselHeader(title string, description string, thumbnail ThumbnailType) C
 
 	return response
 }
+
+// QuickRepliesType : QucikReplies Struct Type
+type QuickRepliesType struct {
+	Label       string      `json:"label"`
+	Action      string      `json:"action"`
+	MessageText string      `json:"messageText"`
+	BlockID     string      `json:"blockId"`
+	Extra       interface{} `json:"extra"`
+}
+
+// QuickReplies : QuickReplies SkillResponse
+func QuickReplies(label string, action string, messageText string, blockID string, extra interface{}) QuickRepliesType {
+	response := QuickRepliesType{}
+
+	return response
+}
