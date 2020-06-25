@@ -125,14 +125,20 @@ func CarouselHeader(title string, description string, thumbnail ThumbnailType) C
 type QuickRepliesType struct {
 	Label       string      `json:"label"`
 	Action      string      `json:"action"`
-	MessageText string      `json:"messageText"`
-	BlockID     string      `json:"blockId"`
-	Extra       interface{} `json:"extra"`
+	MessageText string      `json:"messageText,omitempty"`
+	BlockID     string      `json:"blockId,omitempty"`
+	Extra       interface{} `json:"extra,omitempty"`
 }
 
 // QuickReplies : QuickReplies SkillResponse
 func QuickReplies(label string, action string, messageText string, blockID string, extra interface{}) QuickRepliesType {
 	response := QuickRepliesType{}
+
+	response.Label = label
+	response.Action = action
+	response.MessageText = messageText
+	response.BlockID = blockID
+	response.Extra = extra
 
 	return response
 }

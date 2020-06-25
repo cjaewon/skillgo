@@ -46,8 +46,8 @@ type SkillResponse struct {
 
 // SkillTemplate : SkillTemplate
 type SkillTemplate struct {
-	Outputs      []interface{} `json:"outputs,omitempty"`
-	QuickReplies []interface{} `json:"quickReplies,omitempty"`
+	Outputs      []interface{}      `json:"outputs,omitempty"`
+	QuickReplies []QuickRepliesType `json:"quickReplies,omitempty"`
 }
 
 // ContextControl : ContextControl
