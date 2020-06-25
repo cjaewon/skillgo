@@ -44,5 +44,5 @@ go get github.com/cjaewon/skillgo
 
 ## 예제
 
-[**Card (BasicCard, CommerceCard, Listcard)**](https://github.com/cjaewon/skillgo/tree/master/_examples/card)  
-[**Simple (SimpleText, SimpleImage)**](https://github.com/cjaewon/skillgo/tree/master/_examples/card)
+[📄 **Simple (SimpleText, SimpleImage)**](https://github.com/cjaewon/skillgo/tree/master/_examples/simple)  
+[📄 **Card (BasicCard, CommerceCard, Listcard)**](https://github.com/cjaewon/skillgo/tree/master/_examples/card)  
