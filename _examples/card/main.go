@@ -92,8 +92,44 @@ func commerceCardRouter(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(m)
 	w.WriteHeader(200)
+}
 
-	json.NewEncoder(w).Encode(response)
+func listCardRouter(w http.ResponseWriter, r *http.Request) {
+	var payload skillgo.SkillPayload
+
+	err := json.NewDecoder(r.Body).Decode(&payload)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest) // payload Error -> return EOF
+		return
+	}
+
+	response := skillgo.SkillResponse{
+		Version: "2.0",
+	}
+
+	var items []skillgo.ListItemType
+
+	items = append(
+		items,
+		skillgo.ListItem("Kakao i Developers", "새로운 AI의 내일과 일상의 변화", "http://k.kakaocdn.net/dn/APR96/btqqH7zLanY/kD5mIPX7TdD2NAxgP29cC0/1x1.jpg", skillgo.LinkType{
+			Web: "https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8(%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88)",
+		}),
+	)
+
+	response.Template.Outputs = append(
+		response.Template.Outputs,
+		skillgo.ListCard(
+			skillgo.ListItem("카카오 i 디벨로퍼스를 소개합니다", "", "http://k.kakaocdn.net/dn/xsBdT/btqqIzbK4Hc/F39JI8XNVDMP9jPvoVdxl1/2x1.jpg", skillgo.LinkType{}),
+			items,
+			[]skillgo.ButtonType{},
+		),
+	)
+
+	m, _ := json.Marshal(response)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(m)
+	w.WriteHeader(200)
 }
 
 func main() {
@@ -101,6 +137,7 @@ func main() {
 
 	mux.HandleFunc("/basic-card", basicCardRouter)
 	mux.HandleFunc("/commerce-card", commerceCardRouter)
+	mux.HandleFunc("/list-card", listCardRouter)
 
 	log.Fatal(http.ListenAndServe(":3000", mux))
 }

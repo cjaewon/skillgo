@@ -51,8 +51,6 @@ func simpleImageRouter(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(m)
 	w.WriteHeader(200)
-
-	json.NewEncoder(w).Encode(response)
 }
 
 func main() {
