@@ -28,7 +28,7 @@ go get github.com/cjaewon/skillgo
 | [**SimpleImage**](https://i.kakao.com/docs/skill-response-format#simpleimage) | `SimpleImageType` | SimpleImage |
 | [**BasicCard**](https://i.kakao.com/docs/skill-response-format#basiccard) | `BasicCardType` | BasicCard |
 | [**CommerceCard**](https://i.kakao.com/docs/skill-response-format#commercecard) | `CommerceCardType` | CommerceCard |
-| [**ListCard**](https://i.kakao.com/docs/skill-response-format#listcard) | `ListCard` | ListCard |
+| [**ListCard**](https://i.kakao.com/docs/skill-response-format#listcard) | `ListCardType` | ListCard |
 | [**Carousel**](https://i.kakao.com/docs/skill-response-format#carousel) | `CarouselType` | Carousel |
 
 ### 공통
