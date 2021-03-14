@@ -1,6 +1,6 @@
 package skillgo
 
-// SkillPayload : Information that the bot system delivers to the skill server
+// SkillPayload is the payload which was passed by kakao i open builder server
 type SkillPayload struct {
 	UserRequest struct {
 		Timezone string                 `json:"timezone"`
@@ -35,7 +35,7 @@ type SkillPayload struct {
 	} `json:"action"`
 }
 
-// SkillResponse : SkillResponse
+// SkillResponse is the response which pass to kakao i open builder server
 type SkillResponse struct {
 	Version  string        `json:"version"`
 	Template SkillTemplate `json:"template,omitempty"`
@@ -44,13 +44,13 @@ type SkillResponse struct {
 	Data    interface{} `json:"data,omitempty"`
 }
 
-// SkillTemplate : SkillTemplate
+// SkillTemplate is the template which represents a message
 type SkillTemplate struct {
 	Outputs      []interface{}      `json:"outputs,omitempty"`
 	QuickReplies []QuickRepliesType `json:"quickReplies,omitempty"`
 }
 
-// ContextControl : ContextControl
+// ContextControl is context of message
 type ContextControl struct {
 	Values []struct {
 		Name     string            `json:"name"`

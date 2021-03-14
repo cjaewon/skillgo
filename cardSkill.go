@@ -2,7 +2,7 @@ package skillgo
 
 import "reflect"
 
-// BasicCardType : BasicCard Struct Type
+// BasicCardType is BasicCard template
 type BasicCardType struct {
 	BasicCard struct {
 		Title       string        `json:"title,omitempty"`
@@ -23,7 +23,7 @@ type BasicCardType struct {
 	} `json:"basicCard"`
 }
 
-// BasicCard : BasicCard SkillResponse
+// BasicCard creates BasicCard SkillResponse
 func BasicCard(title string, description string, thumbnail ThumbnailType, buttons []ButtonType) BasicCardType {
 	resposne := BasicCardType{}
 	resposne.BasicCard.Thumbnail = thumbnail
@@ -42,7 +42,7 @@ func BasicCard(title string, description string, thumbnail ThumbnailType, button
 	return resposne
 }
 
-// CommerceCardType : CommerceCard Struct Type
+// CommerceCardType is CommerceCard template
 type CommerceCardType struct {
 	CommerceCard struct {
 		Description     string          `json:"description"`
@@ -57,7 +57,7 @@ type CommerceCardType struct {
 	} `json:"commerceCard"`
 }
 
-// CommerceCard : CommerceCard SkillResponse
+// CommerceCard creates CommerceCard SkillResponse
 func CommerceCard(
 	description string,
 	price int,
@@ -90,7 +90,7 @@ func CommerceCard(
 	return response
 }
 
-// ListCardType : ListCard Struct Type
+// ListCardType is ListCard template
 type ListCardType struct {
 	ListCard struct {
 		Header  ListItemType   `json:"header"`
@@ -99,7 +99,7 @@ type ListCardType struct {
 	} `json:"listCard"`
 }
 
-// ListItemType : ListItem Struct Type
+// ListItemType is ListItem template
 type ListItemType struct {
 	Title       string   `json:"title"`
 	Description string   `json:"description,omitempty"`
@@ -107,7 +107,7 @@ type ListItemType struct {
 	Link        LinkType `json:"link,omitempty"`
 }
 
-// ListCard : ListCard SkillResponse
+// ListCard creates ListCard SkillResponse
 func ListCard(header ListItemType, items []ListItemType, buttons []ButtonType) ListCardType {
 	response := ListCardType{}
 
@@ -121,7 +121,7 @@ func ListCard(header ListItemType, items []ListItemType, buttons []ButtonType) L
 	return response
 }
 
-// ListItem : ListItem for ListCard
+// ListItem creates ListItem for ListCard
 func ListItem(title string, description string, imageURL string, link LinkType) ListItemType {
 	response := ListItemType{}
 

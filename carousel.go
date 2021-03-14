@@ -1,6 +1,6 @@
 package skillgo
 
-// CarouselType : Carousel Struct Type
+// CarouselType is Carousel template
 type CarouselType struct {
 	Type string `json:"type"`
 	// BasicCardType, CommerceCard
@@ -8,7 +8,7 @@ type CarouselType struct {
 	Header CarouselHeaderType `json:"header,omitempty"`
 }
 
-// Carousel : Carousel SkillResponse
+// Carousel creates Carousel SkillResponse
 func Carousel(Type string, items []interface{}, header CarouselHeaderType) CarouselType {
 	response := CarouselType{}
 

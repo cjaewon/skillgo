@@ -1,13 +1,13 @@
 package skillgo
 
-// SimpleTextType : SimpleText Struct Type
+// SimpleTextType is SimpleText Template which located in SkillTemplate.Outputs
 type SimpleTextType struct {
 	SimpleText struct {
 		Text string `json:"text"`
 	} `json:"simpleText"`
 }
 
-// SimpleText : SimpleText SkillResponse
+// SimpleText creates SimpleTextType SkillResponse
 func SimpleText(text string) SimpleTextType {
 	response := SimpleTextType{}
 	response.SimpleText.Text = text
@@ -15,7 +15,7 @@ func SimpleText(text string) SimpleTextType {
 	return response
 }
 
-// SimpleImageType : SimpleImage Struct Type
+// SimpleImageType is SimpleImage Template which located in SkillTemplate.Outputs
 type SimpleImageType struct {
 	SimpleImage struct {
 		ImageURL string `json:"imageUrl"`
@@ -23,7 +23,7 @@ type SimpleImageType struct {
 	} `json:"simpleImage"`
 }
 
-// SimpleImage : SimpleImage SkillResponse
+// SimpleImage creates SimpleImage SkillResponse
 func SimpleImage(imageURL string, altText string) SimpleImageType {
 	response := SimpleImageType{}
 	response.SimpleImage.ImageURL = imageURL

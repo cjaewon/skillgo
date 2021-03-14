@@ -1,6 +1,6 @@
 package skillgo
 
-// ThumbnailType : Thumbnail Struct Type
+// ThumbnailType is Thumbnail template which located in CarouselHeaderType
 type ThumbnailType struct {
 	ImageURL   string   `json:"imageUrl"`
 	Link       LinkType `json:"link,omitempty"`
@@ -9,7 +9,7 @@ type ThumbnailType struct {
 	Height     int      `json:"height,omitempty"`
 }
 
-// Thumbnail : Thumbnail SkillResponse
+// Thumbnail creates Thumbnail SkillResponse
 func Thumbnail(imageURL string, link LinkType, fixedRatio bool, width int, height int) ThumbnailType {
 	response := ThumbnailType{}
 	response.ImageURL = imageURL
@@ -24,14 +24,14 @@ func Thumbnail(imageURL string, link LinkType, fixedRatio bool, width int, heigh
 	return response
 }
 
-// LinkType : Link Struct Type
+// LinkType is Link template
 type LinkType struct {
 	PC     string `json:"pc,omitempty"`
 	Mobile string `json:"mobile,omitempty"`
 	Web    string `json:"web,omitempty"`
 }
 
-// Link : Link SkillResponse
+// Link creates Link SkillResponse
 func Link(pc string, mobile string, web string) LinkType {
 	response := LinkType{}
 
@@ -48,7 +48,7 @@ func Link(pc string, mobile string, web string) LinkType {
 	return response
 }
 
-// ActionConfig : Config in Action
+// ActionConfig represents actions
 type ActionConfig struct {
 	WebLinkURL  string                 `json:"webLinkUrl,omitempty"`
 	MessageText string                 `json:"messageText,omitempty"`
@@ -56,14 +56,14 @@ type ActionConfig struct {
 	BlockID     map[string]interface{} `json:"blockId,omitempty"`
 }
 
-// ButtonType : Button Struct Type
+// ButtonType is Button Template
 type ButtonType struct {
 	Label  string `json:"label"`
 	Action string `json:"action"`
 	ActionConfig
 }
 
-// Button : Button SkillResponse
+// Button creates Button SkillResponse
 func Button(label string, action string, config ActionConfig) ButtonType {
 	response := ButtonType{}
 
@@ -85,13 +85,13 @@ func Button(label string, action string, config ActionConfig) ButtonType {
 	return response
 }
 
-// ProfileType : Profile Struct Type
+// ProfileType is Profile template
 type ProfileType struct {
 	Nickname string `json:"nickname"`
 	ImageURL string `json:"imageUrl"`
 }
 
-// Profile : Profile SkillResponse
+// Profile creates Profile SkillResponse
 func Profile(nickname string, imageURL string) ProfileType {
 	response := ProfileType{}
 
@@ -103,14 +103,14 @@ func Profile(nickname string, imageURL string) ProfileType {
 	return response
 }
 
-// CarouselHeaderType : CarouselHeader Struct Type
+// CarouselHeaderType is CarouselHeader Template which located in Carousel
 type CarouselHeaderType struct {
 	Title       string        `json:"title"`
 	Description string        `json:"description"`
 	Thumbnail   ThumbnailType `json:"thumbnail"`
 }
 
-// CarouselHeader : CarouselHeader SkillResponse
+// CarouselHeader creates CarouselHeader SkillResponse
 func CarouselHeader(title string, description string, thumbnail ThumbnailType) CarouselHeaderType {
 	response := CarouselHeaderType{}
 
@@ -121,7 +121,7 @@ func CarouselHeader(title string, description string, thumbnail ThumbnailType) C
 	return response
 }
 
-// QuickRepliesType : QucikReplies Struct Type
+// QuickRepliesType is QucikReplies Template
 type QuickRepliesType struct {
 	Label       string      `json:"label"`
 	Action      string      `json:"action"`
@@ -130,7 +130,7 @@ type QuickRepliesType struct {
 	Extra       interface{} `json:"extra,omitempty"`
 }
 
-// QuickReplies : QuickReplies SkillResponse
+// QuickReplies creates QuickReplies SkillResponse
 func QuickReplies(label string, action string, messageText string, blockID string, extra interface{}) QuickRepliesType {
 	response := QuickRepliesType{}
 
